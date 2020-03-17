@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmailForm));
-            this.ToLabel = new System.Windows.Forms.Label();
             this.SubjectLabel = new System.Windows.Forms.Label();
             this.MessageLabel = new System.Windows.Forms.Label();
             this.ToBox = new System.Windows.Forms.TextBox();
@@ -60,16 +59,8 @@
             this.OutlookCmdChk = new System.Windows.Forms.CheckBox();
             this.TbirdChk = new System.Windows.Forms.CheckBox();
             this.OtherBtn = new System.Windows.Forms.Button();
+            this.ToBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // ToLabel
-            // 
-            this.ToLabel.AutoSize = true;
-            this.ToLabel.Location = new System.Drawing.Point(56, 34);
-            this.ToLabel.Name = "ToLabel";
-            this.ToLabel.Size = new System.Drawing.Size(23, 13);
-            this.ToLabel.TabIndex = 1;
-            this.ToLabel.Text = "To:";
             // 
             // SubjectLabel
             // 
@@ -325,11 +316,22 @@
             this.OtherBtn.UseVisualStyleBackColor = true;
             this.OtherBtn.Click += new System.EventHandler(this.OtherBtn_Click);
             // 
+            // ToBtn
+            // 
+            this.ToBtn.Location = new System.Drawing.Point(50, 28);
+            this.ToBtn.Name = "ToBtn";
+            this.ToBtn.Size = new System.Drawing.Size(29, 23);
+            this.ToBtn.TabIndex = 30;
+            this.ToBtn.Text = "To";
+            this.ToBtn.UseVisualStyleBackColor = true;
+            this.ToBtn.Click += new System.EventHandler(this.ToBtn_Click);
+            // 
             // EmailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 326);
+            this.Controls.Add(this.ToBtn);
             this.Controls.Add(this.TbirdChk);
             this.Controls.Add(this.OutlookCmdChk);
             this.Controls.Add(this.OtherBtn);
@@ -358,7 +360,6 @@
             this.Controls.Add(this.FromBox);
             this.Controls.Add(this.MessageLabel);
             this.Controls.Add(this.SubjectLabel);
-            this.Controls.Add(this.ToLabel);
             this.Controls.Add(this.FromLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -370,7 +371,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label ToLabel;
         private System.Windows.Forms.Label SubjectLabel;
         private System.Windows.Forms.Label MessageLabel;
         private System.Windows.Forms.TextBox ToBox;
@@ -401,6 +401,7 @@
         private System.Windows.Forms.CheckBox OutlookCmdChk;
         private System.Windows.Forms.CheckBox TbirdChk;
         private System.Windows.Forms.Button OtherBtn;
+        private System.Windows.Forms.Button ToBtn;
     }
 }
 

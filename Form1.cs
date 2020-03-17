@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using SendEmail.Email.OutlookMail;
 using SendEmail.Email.Smtp;
 using SendEmail.Tools;
 
@@ -85,6 +86,17 @@ namespace SendEmail
                 MessageBox.Show("No Keys");
             else
                 MessageBox.Show($"Machine Key: {machine}\n\nUser Key: {user}\n\n{machine.ToString().Substring(0, machine.ToString().Length - 4)}");
+        }
+
+        private void ToBtn_Click(object sender, EventArgs e)
+        {
+            if (OutlookChk.Checked || OutlookCmdChk.Checked)
+            {
+                var to = AddressBook.GetAddressBook();
+                ToBox.Text = to.Name;
+            }
+            else
+                ToBox.Focus();
         }
     }
 }
