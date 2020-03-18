@@ -60,6 +60,7 @@
             this.TbirdChk = new System.Windows.Forms.CheckBox();
             this.OtherBtn = new System.Windows.Forms.Button();
             this.ToBtn = new System.Windows.Forms.Button();
+            this.FromCbox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // SubjectLabel
@@ -93,6 +94,7 @@
             this.SubjectBox.Name = "SubjectBox";
             this.SubjectBox.Size = new System.Drawing.Size(217, 20);
             this.SubjectBox.TabIndex = 6;
+            this.SubjectBox.Text = "Test";
             // 
             // MessageText
             // 
@@ -101,6 +103,7 @@
             this.MessageText.Name = "MessageText";
             this.MessageText.Size = new System.Drawing.Size(217, 81);
             this.MessageText.TabIndex = 7;
+            this.MessageText.Text = "Tesssttsss";
             // 
             // SendBtn
             // 
@@ -195,6 +198,7 @@
             this.OutlookChk.TabIndex = 17;
             this.OutlookChk.Text = "Outlook";
             this.OutlookChk.UseVisualStyleBackColor = true;
+            this.OutlookChk.CheckedChanged += new System.EventHandler(this.OutlookChk_CheckedChanged);
             // 
             // SmtpChk
             // 
@@ -326,11 +330,21 @@
             this.ToBtn.UseVisualStyleBackColor = true;
             this.ToBtn.Click += new System.EventHandler(this.ToBtn_Click);
             // 
+            // FromCbox
+            // 
+            this.FromCbox.FormattingEnabled = true;
+            this.FromCbox.Location = new System.Drawing.Point(84, 5);
+            this.FromCbox.Name = "FromCbox";
+            this.FromCbox.Size = new System.Drawing.Size(217, 21);
+            this.FromCbox.TabIndex = 31;
+            this.FromCbox.Visible = false;
+            // 
             // EmailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 326);
+            this.Controls.Add(this.FromCbox);
             this.Controls.Add(this.ToBtn);
             this.Controls.Add(this.TbirdChk);
             this.Controls.Add(this.OutlookCmdChk);
@@ -365,6 +379,7 @@
             this.MaximizeBox = false;
             this.Name = "EmailForm";
             this.Text = "Email Form";
+            this.Load += new System.EventHandler(this.EmailForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,6 +417,7 @@
         private System.Windows.Forms.CheckBox TbirdChk;
         private System.Windows.Forms.Button OtherBtn;
         private System.Windows.Forms.Button ToBtn;
+        private System.Windows.Forms.ComboBox FromCbox;
     }
 }
 

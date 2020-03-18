@@ -14,6 +14,11 @@ namespace SendEmail.Email.OutlookMail
             var outlook = new Outlook.Application();
 
             var mail = (Outlook.MailItem)outlook.CreateItem(Outlook.OlItemType.olMailItem);
+
+            var account = outlook.Session.Accounts[$"{email.From}"];
+
+            mail.SendUsingAccount = account;
+
             mail.Subject = email.Subject;
 
             mail.Recipients.Add(email.To);
